@@ -1,0 +1,32 @@
+<p-card
+  header="{{ product.title }}"
+  subheader="{{ product.category }}"
+  [style]="{ width: '360px' }"
+>
+  <p [ngStyle]="{ color: product.stock === 0 ? 'red' : 'green' }">
+    {{ product.stock | stock }}
+  </p>
+  <p>{{ product.price }}</p>
+  <ng-template pTemplate="header">
+    <img class="thumbnail" alt="Card" src="{{ product.thumbnail }}" />
+  </ng-template>
+  <p>"{{ product.description }}"</p>
+  <ng-template pTemplate="footer">
+    <div class="text-center">
+      <p-button
+        [ngStyle]="{ display: product.stock === 0 ? 'none' : '' }"
+        label="Add To Cart"
+        icon="pi pi-cart-plus"
+        styleClass="p-button-success"
+        (click)="addToCart(product)"
+      ></p-button>
+      <p-button
+        label="Details"
+        icon="pi pi-info-circle"
+        styleClass="p-button-primary"
+        [style]="{ 'margin-left': '.5em' }"
+        (click)="RedirectToDetails(product.id)"
+      ></p-button>
+    </div>
+  </ng-template>
+</p-card>

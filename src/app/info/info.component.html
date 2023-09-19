@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <img [src]="item.images[0]" alt="" class="border object-fit-cover" />
+    </div>
+    <div class="col-6">
+      <p>
+        <span class="text-primary fw-bolder"> Category: </span
+        >{{ item.category }}
+      </p>
+      <p>
+        <span class="text-primary fw-bolder"> brand: </span>{{ item.brand }}
+      </p>
+      <p>
+        <span class="text-primary fw-bolder"> price: </span>{{ item.price }}
+      </p>
+      <p>
+        <span class="text-primary fw-bolder"> rating: </span>{{ item.rating }}
+      </p>
+      <p>
+        <span class="text-primary fw-bolder"> description: </span
+        >{{ item.description }}
+      </p>
+      <p>
+        <span class="text-primary fw-bolder"> discount: </span
+        >{{ item.discountPercentage }}
+      </p>
+    </div>
+  </div>
+</div>

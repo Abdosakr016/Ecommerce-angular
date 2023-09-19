@@ -1,0 +1,45 @@
+<form
+  class="was-validated"
+  #inputForm="ngForm"
+  (ngSubmit)="submitLoginForm(inputForm)"
+>
+  <div class="mb-3">
+    <label for="InputEmail1" class="form-label">Email address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="InputEmail1"
+      aria-describedby="emailHelp"
+      name="loginemail"
+      ngModel
+      required
+      minlength="3"
+      #loginemail="ngModel"
+    />
+  </div>
+  <div
+    *ngIf="loginemail.touched && loginemail.invalid"
+    id="emailHelp"
+    class="text-danger form-text invalid-feedack"
+  >
+    <small *ngIf="loginemail.errors?.['required']"
+      >this field is required</small
+    >
+    <small *ngIf="loginemail.errors?.['minlength']"
+      >The email must be 3 minimum</small
+    >
+  </div>
+  <div class="mb-3">
+    <label for="InputPassword" class="form-label">Password</label>
+    <input
+      type="password"
+      class="form-control is-valid"
+      id="InputPassword"
+      name="loginpassword"
+      required
+      ngModel
+      #loginpassword="ngModel"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
